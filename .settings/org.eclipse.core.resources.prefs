@@ -1,0 +1,5 @@
+eclipse.preferences.version=1
+encoding//WebRoot/views/base/head.jsp=UTF-8
+encoding//WebRoot/views/user/updatePWD.jsp=UTF-8
+encoding//src/c3p0.properties=GBK
+encoding//src/log4j.properties=UTF-8

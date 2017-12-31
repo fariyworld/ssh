@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+	
+<struts>
+
+	<!-- 全局常量， action  # struts.objectFactory = spring -->
+	<constant name="struts.objectFactory" value="spring"></constant>
+	
+	<!-- 用户管理包 -->
+	<package name="MemberManager" namespace="/" extends="struts-default">
+		
+		<action name="MemberAction_*" class="memberAction" method="{1}">
+			<result name="success">/views/user/loginsuccess.jsp</result>
+			<result name="failure">/views/user/loginfail.jsp</result>
+		</action>
+		
+	</package>
+	
+	<package name="jsonAjax" namespace="/" extends="json-default">
+	
+		<action name="json_Ajax_*" class="memberAction" method="{1}">
+			<result name="ajax" type="json"></result>
+		</action>
+		
+		<action name="admin_Ajax_*" class="adminAction" method="{1}">
+			<result type="json"></result>
+		</action>
+	
+	</package>
+	
+</struts>    
