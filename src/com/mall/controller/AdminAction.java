@@ -1,6 +1,8 @@
 package com.mall.controller;
 
 import java.io.File;
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -24,6 +26,8 @@ public class AdminAction {
 	
 	private String result;
 	private Map<Integer, String> asMap = new HashMap<Integer, String>();
+	
+	private String getParam;
 	
 	private AdminService adminService; 
 	
@@ -82,6 +86,24 @@ public class AdminAction {
 
 	}
 	
+	public String testGet(){
+		
+		//System.out.println("get请求参数:"+getParam);
+		
+		try {
+			
+			System.out.println("get请求参数:"+URLDecoder.decode(getParam, "UTF-8"));
+			
+		} catch (UnsupportedEncodingException e) {
+			
+			System.out.println(e.getMessage());
+		}
+		
+		result = "test get success";
+		
+		return "success";
+	}
+	
 /*****************************************************************/
 	
 	public long getChecking_in_time() {
@@ -98,6 +120,14 @@ public class AdminAction {
 
 	public void setResult(String result) {
 		this.result = result;
+	}
+	
+	public String getGetParam() {
+		return getParam;
+	}
+
+	public void setGetParam(String getParam) {
+		this.getParam = getParam;
 	}
 
 	public long getChecking_out_time() {

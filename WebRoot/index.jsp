@@ -113,6 +113,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <li>发布留言</li>
             </ul>
         </li>
+        <li>
+            <h3 flag="0">测试模块</h3>
+            <ul>
+                <li><a href="views/test/getpost.jsp">Get/POST请求</a></li>
+            </ul>
+        </li>
     </ul>
 </div>
 <div class="content"></div>
